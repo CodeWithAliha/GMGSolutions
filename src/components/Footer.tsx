@@ -20,7 +20,7 @@ export default function Footer() {
               </a>
               <a href="mailto:gmgsolutions108@gmail.com" className="footer-contact-item">
                 <Mail size={18} />
-                <span>gmgsolutions108@gmail.com</span>
+                <span>gmgsolutions@gmail.com</span>
               </a>
             </div>
           </div>
