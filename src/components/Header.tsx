@@ -25,9 +25,9 @@ export default function Header() {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="header-logo">
-          <img src="/logo.webp" alt="GMG Solutions" />
-        </div>
+        <div className="header-logo logo-hover">
+      <img src="/logo.webp" alt="GMG Solutions" />
+    </div>
 
         <nav className="desktop-nav">
           {navLinks.map((link) => (
