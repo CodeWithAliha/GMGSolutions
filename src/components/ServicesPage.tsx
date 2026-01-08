@@ -1,6 +1,13 @@
 import { Globe, Smartphone, Wrench, Palette, PenTool, Shield, ArrowRight, Check, Zap, Target, Award, Clock } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { Image } from 'lucide-react';
+// import { Image1 } from '../../public/images/1.jpg';
+// import { Image2 } from '../../public/images/2.jpg';
+// import { Image3 } from '../../public/images/3.jpg';
+// import { Image4 } from '../../public/images/4.jpg';
+// import { Image5 } from '../../public/images/5.jpg';
+// import { Image6 } from '../../public/images/6.jpg';
+// import { Image7 } from '../../public/images/7.jpg';
+// import { Image8 } from '../../public/images/8.jpeg';
 
 const allServices = [
   {
@@ -105,6 +112,19 @@ export default function ServicesPage() {
   const workflowRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
+  const images = [
+    "/images/1.jpg", // 0
+    "/images/2.jpg", // 1
+    "/images/3.jpg", // 2
+    "/images/4.jpg", // 3
+    null,            // 4 👉 CENTER EMPTY (web icon yahan hai)
+    "/images/5.jpg", // 5
+    "/images/7.jpg", // 6
+    "/images/8.jpeg",// 7
+    "/images/6.jpg", // 8 👉 RED TICK WALI JAGAH
+  ];
+
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -198,6 +218,7 @@ export default function ServicesPage() {
     style={{
       display: "inline-block",
       marginBottom: "22px",
+      marginTop:"40px",
       padding: "10px 26px",
       borderRadius: "30px",
       fontSize: "14px",
@@ -291,34 +312,47 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
+          
+<div className="detail-visual">
+  <div className="service-visual-card">
+    <div className="visual-grid">
+      {images.map((src, i) => {
+        if (!src) {
+          // 👈 center cell empty rahegi
+          return (
+            <div
+              key={i}
+              className="grid-item"
+              style={{
+                background: "transparent",
+                boxShadow: "none",
+              }}
+            />
+          );
+        }
 
-          <div className="detail-visual">
-            <div className="service-visual-card">
-              <div className="visual-grid">
-                {[
-                  "/images/A_digital_illustration_showcases_an_IT_and_softwar_1.jpg",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_2.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_3.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_4.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_5.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_6.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_7.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_8.png",
-                  "/mnt/data/A_digital_illustration_showcases_an_IT_and_softwar_9.png"
-                ].map((src, i) => (
-                  <div key={i} className="grid-item" style={{ animationDelay: `${i * 0.1}s` }}>
-                    <img src={src} alt={`IT Tech ${i + 1}`} />
-                  </div>
-                ))}
-              </div>
-              <div className="visual-center">
-                {React.createElement(allServices[selectedService].icon, {
-                  size: 120,
-                  strokeWidth: 1.5
-                })}
-              </div>
-            </div>
+        return (
+          <div
+            key={i}
+            className="grid-item"
+            style={{ animationDelay: `${i * 0.1}s` }}
+          >
+            <img src={src} alt={`IT Tech ${i + 1}`} />
           </div>
+        );
+      })}
+    </div>
+
+    {/* 🔵 CENTER WEB ICON — SAME AS BEFORE */}
+    <div className="visual-center">
+      {React.createElement(allServices[selectedService].icon, {
+        size: 120,
+        strokeWidth: 1.5,
+      })}
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

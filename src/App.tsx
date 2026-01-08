@@ -8,17 +8,28 @@ import ServicesSection from './components/ServicesSection';
 import AboutSection from './components/AboutSection';
 import WhyChooseSection from './components/WhyChooseSection';
 import ContactSection from './components/ContactSection';
+import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
+import ProjectsPage from "./components/ProjectsPage";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'services'>('home');
+  const [currentPage, setCurrentPage] = useState<
+    'home' | 'about' | 'contact' | 'services' | 'projects'
+  >('home');
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1) || 'home';
-      if (hash === 'home' || hash === 'about' || hash === 'services') {
+
+      if (
+        hash === 'home' ||
+        hash === 'about' ||
+        hash === 'contact' ||
+        hash === 'services' ||
+        hash === 'projects'
+      ) {
         setCurrentPage(hash);
       }
     };
@@ -61,7 +72,9 @@ function App() {
       )}
 
       {currentPage === 'about' && <AboutPage />}
+      {currentPage === 'contact' && <ContactPage />}
       {currentPage === 'services' && <ServicesPage />}
+      {currentPage === 'projects' && <ProjectsPage />}
 
       <Footer onNavigate={navigate} />
     </div>

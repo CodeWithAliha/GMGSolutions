@@ -18,10 +18,14 @@ export default function Loader() {
       <div className="loader-content">
         <div className="loader-logo">
           <img
-  src="/logo.webp"
-  alt="GMG Solutions"
-  style={{ width: '200px', height: '200px' }}
-/>
+            src="/logo.webp"
+            alt="GMG Solutions"
+            style={{
+              width: '180px',
+              height: '180px',
+              transform: 'translateX(12px)' //
+            }}
+          />
 
           <div className="loader-orbit"></div>
           <div className="loader-orbit orbit-2"></div>

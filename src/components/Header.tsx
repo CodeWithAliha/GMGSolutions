@@ -14,13 +14,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Why Us', href: '#why-choose' },
-    { name: 'Contact', href: '#contact' },
-  ];
+const navLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'Services', href: '#services' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' },
+];
+
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>

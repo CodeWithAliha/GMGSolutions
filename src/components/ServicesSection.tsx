@@ -64,15 +64,21 @@ export default function ServicesSection() {
   return (
     <section className="services-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
-          <span className="section-badge">Our Expertise</span>
-          <h2 className="section-title">
-            Services We <span className="gradient-text">Offer</span>
-          </h2>
-          <p className="section-description">
-            Comprehensive digital solutions tailored to elevate your business and drive growth
-          </p>
-        </div>
+        <div
+  className="section-header"
+  style={{ marginTop: "-40px" }}
+>
+  <span className="section-badge">Our Expertise</span>
+
+  <h2 className="section-title">
+    Services We <span style={{ color: "#06b6d4" }}>Offer</span>
+  </h2>
+
+  <p className="section-description">
+    Comprehensive digital solutions tailored to elevate your business and drive growth
+  </p>
+</div>
+
 
         <div className="services-grid">
           {services.map((service, index) => (

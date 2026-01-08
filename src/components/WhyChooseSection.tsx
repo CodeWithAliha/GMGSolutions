@@ -54,15 +54,21 @@ export default function WhyChooseSection() {
   return (
     <section className="why-choose-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
-          <span className="section-badge">Why Choose Us</span>
-          <h2 className="section-title">
-            Your Trusted <span className="gradient-text">Technology Partner</span>
-          </h2>
-          <p className="section-description">
-            We combine expertise, dedication, and innovation to deliver exceptional results
-          </p>
-        </div>
+        <div
+  className="section-header"
+  style={{ marginTop: "-70px" }}
+>
+  <span className="section-badge">Why Choose Us</span>
+
+  <h2 className="section-title">
+    Your Trusted <span className="gradient-text">Technology Partner</span>
+  </h2>
+
+  <p className="section-description">
+    We combine expertise, dedication, and innovation to deliver exceptional results
+  </p>
+</div>
+
 
         <div className="why-choose-grid">
           {reasons.map((reason, index) => (
